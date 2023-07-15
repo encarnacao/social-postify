@@ -31,3 +31,12 @@ export class LoginUserDTO {
   @MaxLength(20)
   password: string;
 }
+
+export interface UserData {
+  id: number;
+  name: string;
+  email: string;
+  avatar: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
