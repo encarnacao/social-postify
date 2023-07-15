@@ -32,10 +32,10 @@ export class AuthService {
       if (valid) {
         return this.generateToken(user);
       } else {
-        throw new HttpException('Invalid email of password', HttpStatus.NOT_FOUND);
+        throw new HttpException('Invalid email of password', HttpStatus.UNAUTHORIZED);
       }
     } catch {
-      throw new HttpException('Invalid email of password', HttpStatus.NOT_FOUND);
+      throw new HttpException('Invalid email of password', HttpStatus.UNAUTHORIZED);
     } 
   }
 }
