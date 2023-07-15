@@ -10,9 +10,8 @@ export class PublicationsController {
 
   @UseGuards(AuthGuard)
   @Get()
-  getPublications(@User() user: UserData) {
-    return {
-      user,
-    };
+  async getPublications(@User() user: UserData) {
+    const publications = await this.publicationsService.getAll(user.id);
+    return publications;
   }
 }
